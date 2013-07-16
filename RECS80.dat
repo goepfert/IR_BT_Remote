@@ -1,0 +1,28 @@
+PRC-08 Remote Control (RECS-80 Protocol)
+
+Layout / Command
+
+
+DEEM	DEK		DEL		STBY
+30		4		--		1
+
+A/B		LNB		MEM
+36		14		--
+
+AUDIO^	VIDEO^	SAT		MUTE
+40		44		9		6
+
+AUDIOv	VIDEOv	TAB
+41		45		5
+
+1		2		3		PROG^
+16		17		18		7
+
+4		5		6		PROGv
+19		20		21		8
+
+7		8		9
+22		23		24
+
+		0
+		15
