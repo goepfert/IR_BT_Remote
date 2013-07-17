@@ -292,9 +292,9 @@ void sendDataBT() {
 
 	data_buffer[TYPE_POS] = AW;
 	data_buffer[STATUS_POS] = pwm_status;
-	bt_data.red = rgb_color.r * 254.;
-	bt_data.green = rgb_color.g * 254.;
-	bt_data.blue = rgb_color.b * 254.;
+	bt_data.red = rgb_color.r * 254. + 0.5;
+	bt_data.green = rgb_color.g * 254. + 0.5;
+	bt_data.blue = rgb_color.b * 254. + 0.5;
 	bt_data.white = white_value;
 
 	memcpy(&data_buffer[DATA_POS], &bt_data, DATA_LENGTH);
@@ -316,9 +316,9 @@ void updateChannels() {
 		return;
 	}
 
-	rgb_color.r = (float) (bt_data.red) / 255.;
-	rgb_color.g = (float) (bt_data.green) / 255.;
-	rgb_color.b = (float)(bt_data.blue) / 255.;
+	rgb_color.r = (float) (bt_data.red) / 254.;
+	rgb_color.g = (float) (bt_data.green) / 254.;
+	rgb_color.b = (float)(bt_data.blue) / 254.;
 	white_value = (uint8_t)(bt_data.white);
 
 	update_color();
